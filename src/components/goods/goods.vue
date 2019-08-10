@@ -185,9 +185,8 @@ export default {
   width 100%
   overflow hidden
   .menu-wrapper
-    // 宽度占父容器的80px
-    flex 0 0 80px
-    width 80px
+    flex 0 0 80px // 宽度占父容器的80px
+    width 80px //宽度定不定都无所谓
     background #f3f5f7
     .menu-item
       // 设置为表格，表格自带css的属性
@@ -196,11 +195,11 @@ export default {
       width 56px
       padding 0 12px
       line-height 14px
-      // &数组符号，当前点中的
-      &.current
+      // &数组符号，当前被点中的菜单
+      &.current //menu-item下的current类名
         position relative
         z-index 10
-        margin-top -1px
+        margin-top -1px //有一个1px的边框
         background #ffffff
         font-weight 700
       .text
@@ -216,7 +215,7 @@ export default {
           width 12px
           height 12px
           margin-right 2px
-          background-size 12px 12px
+          background-size 12px 12px // 100%
           background-repeat no-repeat
           &.decrease
             bg-image('decrease_3')

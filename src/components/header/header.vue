@@ -27,9 +27,11 @@
       <span class="bulletin-text">{{seller.bulletin}}</span>
       <i class="icon-keyboard_arrow_right"></i>
     </div>
+    <!-- 背景图片 -->
     <div class="background">
       <img :src="seller.avatar" width="100%" height="100%">
     </div>
+    <!-- vue内置组件 -->
     <transition name="fade">
       <div class="detail" v-show="detailShow">
         <div class="detail-wrapper clearfix">
@@ -70,7 +72,7 @@
 <script>
 export default {
   name: 'Header',
-  props: {
+  props: {  //用来接收外部传进来的数据，用来接收调用这个组件传进来的参数
     seller: {
       type: Object
     }
@@ -100,7 +102,7 @@ export default {
 @import '../../common/stylus/mixin'
   .header
     position relative
-    overflow hidden
+    overflow hidden //BFC
     color #ffffff
     background rgba(7, 17, 27, 0.5)
     .content-wrapper
@@ -215,7 +217,7 @@ export default {
       width 100%
       height 100%
       z-index -1
-      filter blur(10px)
+      filter blur(10px) //背景虚化
     .detail
       position fixed
       z-index 100
@@ -223,8 +225,8 @@ export default {
       left 0
       width 100%
       height 100%
-      overflow auto
-      backdrop-filter blur(10px)
+      overflow auto //超出自适应
+      backdrop-filter blur(10px) //背景色虚化
       opacity 1
       background rgba(7,17,27,0.8)
 
